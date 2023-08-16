@@ -3,29 +3,91 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-
-        <title>404 Error- Page not found</title>
+        <link rel="stylesheet" href="404.css">
+        <script src="app.js" defer></script>
+        <title>404</title>
     </head>
     <body>
-        <div id="swamp">
-            <div class="lilyPad"></div>
-            <div class="frog">
-                <div class="head">
-                    <div id="eye1" class="eye left">
-                        <div id="pupil1" class="inner"></div>
-                    </div>
-                    <div id="eye2" class="eye right">
-                        <div id="pupil2" class="inner"></div>
-                    </div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                </div>
-                <div class="body"></div>
-                <div class="toes left"></div>
-                <div class="toes right"></div>
+        <canvas id="canvas" style="position : absolute; top : 0px; left : 0px;">
+        </canvas>
+        <div class="wrapper">
+
+            <! –– The Fly ––>
+            <svg version="1.1" class="flyx"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 103.2 130.7"
+                style="enable-background:new 0 0 103.2 130.7;"
+                xml:space="preserve">
+
+                <g class="fly">
+
+                    <! –– Wing ––>
+                    <path class="wing"
+                        d="M5.7,40.5C1.9,28,7.1,14.1,15,7.6C22.8,0.7,33.2,1.3,37.5,7c4.6,6,7.1,15.4,10.3,20.7c2.8,5.8,6.3,7.5,4.5,9.9
+              c-3.2,4.2-17.6,6.6-24.1,16.3c-3.9,4.7-5,8.3-9,6.8C15.6,59.2,9.3,52.8,5.7,40.5z" />
+                    <path class="wing"
+                        d="M97.7,40.5c3.9-12.5-1.4-26.4-9.3-32.8C80.6,0.7,70.2,1.3,65.9,7c-4.6,6-7.1,15.4-10.3,20.7
+              c-2.8,5.8-6.3,7.5-4.5,9.9c3.2,4.2,17.6,6.6,24.1,16.3c3.9,4.7,5,8.3,9,6.8C87.8,59.2,94.1,52.8,97.7,40.5z" />
+
+                    <! –– body ––>
+                    <path class="st0"
+                        d="M48.1,23.8c3.5,3.7,8.2,4.9,10.7,2.9c-3.8,3.5-9.6,3.3-13.2-0.4c-2.1-2.1-2.9-5-2.6-7.7c0.1-1.1,1.6-1.2,2-0.1
+          C45.4,20.3,46.5,22.2,48.1,23.8z" />
+                    <path class="st0"
+                        d="M55.7,23.8c-3.5,3.7-8.2,4.9-10.7,2.9c3.8,3.5,9.6,3.3,13.2-0.4c2.1-2.1,2.9-5,2.6-7.7c-0.1-1.1-1.6-1.2-2-0.1
+          C58.4,20.3,57.3,22.2,55.7,23.8z" />
+                    <circle class="st0" cx="51.3" cy="44" r="22.7" />
+                    <ellipse class="st0" cx="52.6" cy="67.5" rx="8.1"
+                        ry="3.9" />
+                    <ellipse class="st0 mouth" cx="52.6" cy="70.9" rx="4.9"
+                        ry="2.4" />
+
+                    <! –– Right Compound eyes ––>
+                    <path class="st3-1"
+                        d="M77.8,41.9c0,2.4-0.2,4.8-0.5,7C76,58.2,71.8,64.1,67,64c-2.2,0-4.2-1.2-5.9-3.3c-3-3.7-4.9-11-4.9-18.9
+              c0-12.8,4.1-18,10.8-17.8C73.7,23.8,77.8,29.1,77.8,41.9z" />
+                    <ellipse class="st5" cx="67" cy="37.1" rx="5.2" ry="6.9" />
+                    <radialgradient id="SVGID_2_" cx="67.038" cy="44.0369"
+                        r="16.0637" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" style="stop-color:#D5816F" />
+                        <stop offset="1" style="stop-color:#74382F" />
+                    </radialgradient>
+
+                    <! –– Left Compound eyes ––>
+                    <path class="st3"
+                        d="M48.6,41.9c0,2.4-0.2,4.8-0.5,7c-1.3,9.3-5.5,15.2-10.3,15.2c-2.2,0-4.2-1.2-5.9-3.3c-3-3.7-4.9-11-4.9-18.9
+              c0-12.8,4.1-18,10.8-17.8C44.4,23.8,48.6,29.1,48.6,41.9z" />
+                    <ellipse class="st5" cx="37.5" cy="37.1" rx="5.2"
+                        ry="6.9" />
+
+                    <radialgradient id="SVGID_1_" cx="37.803" cy="44.0369"
+                        r="16.0637" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" style="stop-color:#D5816F" />
+                        <stop offset="1" style="stop-color:#74382F" />
+                    </radialgradient>
+
+                </g>
+
+                <! –– Shadow ––>
+                <ellipse class="st0 shadow" cx="51.7" cy="105.9" rx="36.7"
+                    ry="4.7" />
+
+            </svg>
+
+        </div>
+
+        <div class="error-message">
+            <div class="error">404</div>
+            <div class="message">
+                <p>Oops! &nbsp;You've wandered into the digital wilderness.</p>
+                <p>Fear not, together we shall find our way back. <a
+                        href="http://www.google.com" class="btn green">Back to
+                        Safety</a></p>
+
             </div>
         </div>
-        <div id="notfound">404</div>
+        <div class="horizon"></div>
+
     </body>
 </html>
